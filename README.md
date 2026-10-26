@@ -19,256 +19,439 @@ View your app in AI Studio: https://ai.studio/apps/a9e88348-1b32-4ecd-a284-3160b
 3. Run the app:
    `npm run dev`
 
-
-Here is the complete file content:
-code
-
 # 🎵 AI Song Maker & Vocal Studio (Raag Studio)
 
-> **Next-generation, browser-based AI music production workstation, vocal studio, and songwriting companion powered by Google Gemini 2.5 Flash, Web Audio API DSP synthesis, and real-time multitrack sequencing.**
+**An AI-powered music production workstation, vocal studio, and songwriting companion built with React, TypeScript, the Web Audio API, and Google Gemini 2.5 Flash.**
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x%20%7C%207.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React 19](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![Vite 8](https://img.shields.io/badge/Vite-8.3-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4.3-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Web Audio API](https://img.shields.io/badge/Web%20Audio%20API-DSP%20Synthesis-FF5722)](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
-[![Gemini 2.5 Flash](https://img.shields.io/badge/Google%20Gemini-2.5%20Flash-8E75B2?logo=google)](https://ai.google.dev/)
-[![Tests Passing](https://img.shields.io/badge/Tests-62%20passed-22c55e?logo=node.js)](https://nodejs.org/)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+Raag Studio is a browser-based digital audio workstation (DAW) designed to bring songwriting, music composition, vocal processing, and audio production together in one creative environment.
 
----
+It combines Indian classical and Western music theory, procedural audio synthesis, an interactive MIDI piano roll, intelligent lyric analysis, and AI-assisted songwriting tools.
 
-## 🌟 Overview
+Whether you're creating Bollywood romantic ballads, Punjabi pop, Sufi-inspired compositions, lo-fi beats, or cinematic soundtracks, Raag Studio provides tools to help you develop your musical ideas from initial inspiration to a finished audio project.
 
-**AI Song Maker & Vocal Studio** is a full-stack digital audio workstation (DAW) and lyric-composition laboratory designed right in the browser. It combines algorithmic Indian classical and Western music theory engines, real-time Web Audio API procedural sound synthesis (featuring Harmonium, Bansuri, Sitar, Tanpura, Dholak, and 808 Sub-bass), an intelligent lyric-writing suite with phonetic rhyme detection and narrative arc analysis, alongside AI assistance powered by **Google Gemini 2.5 Flash**.
+## ✨ Key Features
 
-Whether you are crafting Bollywood romantic ballads, high-energy Punjabi pop, Sufi qawwali, lo-fi chillhop, or contemporary cinematic scores, this studio gives you end-to-end creative control from initial prompt to mastered stem export.
+### 🎛️ 1. Multitrack Audio Engine & Piano Roll
 
----
+Create and arrange music using a browser-based synthesizer powered by the Web Audio API.
 
-## 🚀 Key Features
+- Client-side procedural audio synthesis.
+- Interactive MIDI piano roll with a visual note grid.
+- Add, delete, resize, and arrange musical notes.
+- Octave switching and zoom controls.
+- Real-time playback cursor synchronization.
+- Support for MIDI Type 0 and Type 1 exports.
+- Multitrack sequencing and individual instrument controls.
 
-### 1. 🎛️ Multitrack Web Audio DSP Synthesizer & Piano Roll
-- **Zero External Audio File Latency**: 100% client-side DSP synthesis using Web Audio API nodes (`OscillatorNode`, `BiquadFilterNode`, `GainNode`, `ConvolverNode`, `WaveShaperNode`).
-- **Authentic World & Indian Classical Instruments**:
-  - **Sitar**: Resonant sympathetic buzz with physical pluck modeling.
-  - **Bansuri (Bamboo Flute)**: Breathy sine-wave synthesis with authentic subtle pitch vibrato.
-  - **Harmonium**: Rich dual-reed warm detuned sawtooth synthesis with swell dynamics.
-  - **Tanpura**: Continuous multi-string drone bed with overtone shimmer.
-  - **Dholak / Tabla**: Procedural percussion modeling resonant bass *bayan* slaps and high *dayan* snaps.
-  - **Sub Bassline / 808**: Punchy sine-wave sub with soft-clipping saturation.
-- **Interactive MIDI Piano Roll**:
-  - Visual note grid mapping octaves C2 through B5.
-  - Click-to-add, click-to-delete, drag-and-resize note duration.
-  - Octave switching, zoom controls, and live playback cursor synchronization.
-  - High-precision export to standard `.mid` (MIDI Type 0/1) files.
+**Supported instruments:**
 
-### 2. ✍️ Lyric Studio & Rhyme Intelligence Engine
-- **Phonetic Rhyme Detection**: Analyzes end rhymes across lines, categorizing them into Perfect, Family, Assonance, and Radif/Qafia (Urdu/Hindi poetic meters).
-- **Rhyme Scheme Recognition**: Automatically calculates pattern detection (AABB, ABAB, AAAA, Ghazal Radif/Qafia).
-- **Syllable & Meter Counter**: Real-time syllable stress breakdown to ensure melodic rhythm balance.
-- **Emotional Storyline Arc Analyzer**: Evaluates narrative progression across Verse 1, Verse 2, Chorus, and Bridge, graphing emotional valence and narrative coherence.
-- **AI-Powered Rhyme Auto-Complete**:
-  - Context-aware lyric suggestions driven by Gemini 2.5 Flash.
-  - Suggests the next rhyming line respecting current mood, genre, and phonetic rhyme scheme.
-  - One-click insertion directly into the lyrics editor.
+- **Sitar:** Resonant plucked-string synthesis with sympathetic resonance.
+- **Bansuri:** Breath-inspired flute synthesis with subtle pitch vibrato.
+- **Harmonium:** Warm, layered reed-style synthesis.
+- **Tanpura:** Continuous drone with harmonic overtones.
+- **Dholak and Tabla:** Procedurally synthesized Indian percussion.
+- **808 Sub-Bass:** Deep bass tones with soft-clipping saturation.
 
-### 3. 🎼 Harmonic Progression Studio & Raga Modes
-- **Modal Interchange & Scales**: Support for Western Major/Minor, Dorian, Phrygian, Mixolydian, as well as Indian Classical That/Raag scales (Bilawal, Kafi, Bhairav, Yaman, Kalyan, Khamaj, Asavari, Todi, Marwa).
-- **Chord Progression Generator**: Interactive chord pads with real-time audio auditioning.
-- **Melodic Contour Visualizer**: Canvas-based real-time rendering of pitch curves, melodic transitions, and interval dynamics.
+### ✍️ 2. AI Lyrics Studio
 
-### 4. 🎚️ Multitrack Mixer & Mastering Suite
-- **Channel Strips**: Individual faders with dB gain metering, stereo panning, solo, and mute states.
-- **Master Effects Chain**:
-  - 3-Band Parametric EQ (Low shelf, Mid peak, High shelf).
-  - Studio Compressor (Threshold, Ratio, Attack, Release).
-  - Algorithmic Space Reverb & Tape Delay.
-  - Master Limiter and Soft-clipping Maximizer.
-- **Real-Time Oscilloscope & Waveform Canvas**:
-  - Live audio spectrum analyzer and time-domain oscilloscope rendered at 60 FPS on HTML5 Canvas.
+Write, analyze, and improve song lyrics with intelligent songwriting assistance.
 
-### 5. 🧹 Audio Cleaner & AI Vocal Production Studio
-- **Vocal Processing Chain**: Formant pitch-correction / auto-tune engine, de-esser, vocal warmth saturation, and doubler/chorus effect.
-- **Audio Restoration**: Background denoiser, room hum suppressor, and transient shaper for imported voice memos or live microphone recordings.
+- Generate lyrics from topics, emotions, and creative prompts.
+- Detect phonetic rhymes and categorize rhyme relationships.
+- Identify rhyme schemes such as AABB, ABAB, and AAAA.
+- Analyze syllables and rhythmic stress.
+- Support Radif and Qafia analysis for Urdu and Hindi poetic forms.
+- Generate context-aware lyric suggestions using Google Gemini.
+- Explore song structures, including verses, choruses, and bridges.
+- Insert suggested lyric lines directly into the editor.
 
-### 6. ⚡ Studio Workflow & Productivity
-- **Global Studio Keyboard Shortcuts**:
-  - <kbd>Space</kbd>: Global Play / Pause toggle.
-  - <kbd>L</kbd>: Jump instantly to **Lyrics Studio**.
-  - <kbd>M</kbd>: Jump instantly to **Mixer & Master**.
-  - <kbd>C</kbd>: Jump to **Music Composer & Piano Roll**.
-  - <kbd>V</kbd>: Jump to **Vocal Studio**.
-  - <kbd>P</kbd>: Jump to **Prompt & Song Generator**.
-  - <kbd>Ctrl</kbd> + <kbd>Z</kbd> / <kbd>Cmd</kbd> + <kbd>Z</kbd>: Undo project changes.
-  - <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> / <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd>: Redo project changes.
-- **Deep Undo / Redo History Stack**: Full immutable project snapshot history covering lyrics, arrangement blocks, stem volumes, and tempo changes.
-- **Export Formats**: Standard MIDI file (`.mid`), master WAV mixdown, individual stem tracks, and lyric lead-sheet export.
+### 🎼 3. Music Theory & Raga Studio
 
----
+Explore Western music theory and Indian classical musical traditions.
 
-## 🏗️ Architecture & Tech Stack
-┌─────────────────────────────────────────────────────────────┐
-│ React 19 SPA │
-│ ┌───────────────┐ ┌────────────────┐ ┌──────────────────┐ │
-│ │ PromptSection │ │ LyricsStudio │ │ MusicComposer │ │
-│ │ (Song Gen) │ │ (Rhyme Engine)│ │ (MIDI Roll) │ │
-│ └───────┬───────┘ └────────┬───────┘ └────────┬─────────┘ │
-│ │ │ │ │
-│ ┌───────┴───────┐ ┌────────┴───────┐ ┌────────┴─────────┐ │
-│ │ VocalStudio │ │ MixerMaster │ │ StudioShortcuts │ │
-│ │ (Pitch/Tune) │ │ (DSP FX Rack) │ │ (Global Hotkeys) │ │
-│ └───────┬───────┘ └────────┬───────┘ └────────┬─────────┘ │
-│ │ │ │ │
-│ ▼ ▼ ▼ │
-│ ┌───────────────────────────────────────────────────────┐ │
-│ │ Web Audio DSP Engine (engine.ts) │ │
-│ │ - Polyphonic Synth - Sitar / Bansuri / Harmonium │ │
-│ │ - Dholak / Tabla - Tanpura Drone - Master Bus │ │
-│ └──────────────────────────┬────────────────────────────┘ │
-└─────────────────────────────┼───────────────────────────────┘
-│ HTTP / REST
-▼
-┌─────────────────────────────────────────────────────────────┐
-│ Express Backend (server.ts) │
-│ ┌───────────────────────────────────────────────────────┐ │
-│ │ POST /api/generate-song-idea │ │
-│ │ POST /api/generate-lyrics │ │
-│ │ POST /api/suggest-rhymes │ │
-│ │ POST /api/suggest-lyrics-line (AI Autocomplete) │ │
-│ │ POST /api/analyze-storyline │ │
-│ └──────────────────────────┬────────────────────────────┘ │
-│ │ Google GenAI SDK │
-│ ▼ │
-│ Google Gemini 2.5 Flash API │
-└─────────────────────────────────────────────────────────────┘
-code
-Code
-### Technology Highlights
-- **Frontend**: [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS v4](https://tailwindcss.com/), [Motion (Framer Motion)](https://motion.dev/), [Lucide React](https://lucide.dev/).
-- **Audio & Signal Processing**: Native Web Audio API, Canvas 2D API for 60fps waveforms and spectrograms.
-- **Backend / Dev Server**: [Express](https://expressjs.com/) with [Vite](https://vitejs.dev/) middleware and [tsx](https://github.com/privatenumber/tsx).
-- **Artificial Intelligence**: `@google/genai` with model `gemini-2.5-flash`.
-- **Testing**: Built-in Node.js Test Runner (`node --test` / `tsx --test`) with 62 unit tests validating DSP calculations, rhyme phonetics, syllable meter, musical scales, and storyline sentiment.
+- Generate and audition chord progressions.
+- Experiment with major, minor, modal, and pentatonic scales.
+- Explore Indian classical raga-inspired scale structures.
+- Visualize melodic contours and pitch transitions.
+- Analyze intervals and melodic movement.
+- Develop musical ideas using different harmonic and melodic approaches.
 
----
+**Supported Western scales and modes include:**
 
-## 📁 Repository Structure
-.
-├── index.html # App entry point with meta tags & Google fonts
-├── metadata.json # AI Studio applet configuration & permissions
-├── package.json # Project dependencies, scripts, and engine specs
-├── server.ts # Full-stack Express server + Gemini AI endpoints + Vite middleware
-├── tsconfig.json # TypeScript compiler configuration
-├── vite.config.ts # Vite 8 configuration with Tailwind CSS v4 & React plugin
-├── .env.example # Example environment variables template
+Major, Natural Minor, Harmonic Minor, Melodic Minor, Dorian, Phrygian, Lydian, Mixolydian, Locrian, Blues Minor, Major Pentatonic, and Minor Pentatonic.
+
+**Supported Indian raga-inspired scales include:**
+
+Bilawal, Kalyan, Khamaj, Kafi, Asavari, Bhairav, Bhairavi, Todi, Marwa, and Poorvi.
+
+### 🎚️ 4. Multitrack Mixer & Mastering Suite
+
+Mix and refine your music using dedicated channel controls and audio effects.
+
+- Individual channel volume faders.
+- Decibel gain metering.
+- Stereo panning.
+- Solo and mute controls.
+- Three-band equalization.
+- Compressor with adjustable threshold, ratio, attack, and release.
+- Algorithmic reverb and tape delay.
+- Master limiting and soft-clipping maximization.
+- Real-time waveform and audio spectrum visualization.
+
+### 🎤 5. Vocal Studio & Audio Cleaner
+
+Process vocal recordings and experiment with audio effects.
+
+- Pitch correction and vocal tuning.
+- Formant and pitch-shifting effects.
+- Vocal warmth and saturation.
+- Doubler and chorus effects.
+- Background noise reduction.
+- Room hum suppression.
+- Transient shaping.
+- Live microphone monitoring.
+- Audio restoration for imported recordings.
+
+### 🤖 6. AI-Powered Songwriting Assistant
+
+Use Google Gemini 2.5 Flash to develop and refine musical ideas.
+
+- Generate song concepts from natural-language prompts.
+- Create structured lyrics based on genre and mood.
+- Suggest rhyming words and poetic expressions.
+- Autocomplete lyrics while maintaining context.
+- Analyze emotional progression and narrative coherence.
+- Develop musical blueprints with suggested tempo, key, chord progressions, and song structure.
+
+### ⚡ 7. Studio Workflow & Productivity
+
+Work efficiently with global playback controls, keyboard shortcuts, and project history.
+
+| Shortcut | Action |
+|---|---|
+| `Space` | Play or pause |
+| `L` | Open Lyrics Studio |
+| `M` | Open Mixer & Master |
+| `C` | Open Music Composer & Piano Roll |
+| `V` | Open Vocal Studio |
+| `P` | Open Prompt & Song Generator |
+| `Ctrl/Cmd + Z` | Undo |
+| `Ctrl/Cmd + Shift + Z` | Redo |
+
+**Export options include:**
+
+- Standard MIDI files (`.mid`).
+- Master WAV mixdowns.
+- Individual audio stems.
+- Lyric lead sheets.
+
+## 🏗️ Architecture
+
+Raag Studio uses a React-based frontend, a Web Audio API synthesis engine, and an Express backend that communicates with Google Gemini.
+
+```text
+Raag Studio
+│
+├── React 19 Frontend
+│   ├── Prompt & Song Generator
+│   ├── Lyrics Studio
+│   ├── Music Composer & Piano Roll
+│   ├── Harmonic Progression Studio
+│   ├── Vocal Studio
+│   ├── Audio Cleaner
+│   ├── Mixer & Mastering Suite
+│   └── Export Manager
+│
+├── Web Audio API Engine
+│   ├── Procedural Instrument Synthesis
+│   ├── Multitrack Sequencing
+│   ├── Music Theory & Raga Engine
+│   ├── Audio Effects Processing
+│   └── MIDI Export
+│
+└── Express Backend
+    ├── Song Idea Generation
+    ├── Lyrics Generation
+    ├── Rhyme Suggestions
+    ├── Lyric Autocomplete
+    └── Storyline Analysis
+        │
+        └── Google Gemini 2.5 Flash
+```
+
+## 🛠️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| React 19 | Frontend user interface |
+| TypeScript | Type-safe application development |
+| Vite | Development server and build tooling |
+| Tailwind CSS v4 | Styling and responsive layouts |
+| Motion | UI animations |
+| Lucide React | Interface icons |
+| Web Audio API | Procedural audio synthesis and effects |
+| Canvas 2D API | Waveforms and audio visualization |
+| Node.js | JavaScript runtime |
+| Express | Backend API and server middleware |
+| Google GenAI SDK | Gemini AI integration |
+| Node.js Test Runner | Automated unit testing |
+
+## 📁 Project Structure
+
+```text
+raag-studio/
+├── index.html
+├── metadata.json
+├── package.json
+├── server.ts
+├── tsconfig.json
+├── vite.config.ts
+├── .env.example
 │
 └── src/
-├── main.tsx # React root mount
-├── App.tsx # Primary state coordinator, hotkeys, undo/redo, transport
-├── index.css # Tailwind v4 theme configuration & audio canvas styling
-│
-├── audio/ # Audio core, music theory & analysis engines
-│ ├── engine.ts # Web Audio API procedural synthesizer, stems, MIDI export
-│ ├── musicTheory.ts # Ragas, scales, chord progressions, Roman numeral analysis
-│ ├── musicTheory.test.ts # Music theory unit tests (14 tests)
-│ ├── dspCalculations.ts # Gain-to-dB, EQ filters, compressor curve calculations
-│ ├── dspCalculations.test.ts # DSP unit tests (10 tests)
-│ ├── rhymeDetection.ts # Phonetic rhyme matcher, CMU-style phoneme scoring, Ghazal meter
-│ ├── rhymeDetection.test.ts # Rhyme engine tests (13 tests)
-│ ├── meterAnalysis.ts # Syllable counter, rhythmic stress parser
-│ ├── meterAnalysis.test.ts # Meter unit tests (10 tests)
-│ ├── sentimentAnalysis.ts # Lexical valence, emotional tone analyzer
-│ ├── sentimentAnalysis.test.ts # Sentiment unit tests (8 tests)
-│ ├── storylineAnalysis.ts # Song narrative arc evaluator (Verse -> Chorus -> Outro)
-│ └── storylineAnalysis.test.ts # Storyline arc tests (7 tests)
-│
-└── components/ # Modular UI views & audio controls
-├── StudioHeader.tsx # Global playback transport, BPM, key, undo/redo buttons
-├── PromptSection.tsx # AI prompt-to-song blueprint generator
-├── LyricsStudio.tsx # Interactive lyric editor with live rhyme & meter stats
-├── StorylineSummaryPanel.tsx # Visual narrative arc, valence graph & lyrical coaching
-├── MusicComposer.tsx # MIDI Piano Roll editor, track selector & scale picker
-├── MelodicContourVisualizer.tsx # Real-time pitch contour & melody canvas
-├── HarmonicProgressionStudio.tsx# Modal interchange, chord pads & raga progression studio
-├── VocalStudio.tsx # Vocal tuner, formant pitch-shifter, live mic monitor
-├── AudioCleaner.tsx # Noise gate, hum remover & audio restorer
-├── MixerAndMaster.tsx # Multitrack mixer, faders, pan, master FX rack & oscilloscope
-└── ExportModal.tsx # Stem export, WAV mixdown, and MIDI file downloader
-code
-Code
----
+    ├── main.tsx
+    ├── App.tsx
+    ├── index.css
+    │
+    ├── audio/
+    │   ├── engine.ts
+    │   ├── musicTheory.ts
+    │   ├── musicTheory.test.ts
+    │   ├── dspCalculations.ts
+    │   ├── dspCalculations.test.ts
+    │   ├── rhymeDetection.ts
+    │   ├── rhymeDetection.test.ts
+    │   ├── meterAnalysis.ts
+    │   ├── meterAnalysis.test.ts
+    │   ├── sentimentAnalysis.ts
+    │   └── storylineAnalysis.ts
+    │
+    └── components/
+        ├── StudioHeader.tsx
+        ├── PromptSection.tsx
+        ├── LyricsStudio.tsx
+        ├── StorylineSummaryPanel.tsx
+        ├── MusicComposer.tsx
+        ├── MelodicContourVisualizer.tsx
+        ├── HarmonicProgressionStudio.tsx
+        ├── VocalStudio.tsx
+        ├── AudioCleaner.tsx
+        ├── MixerAndMaster.tsx
+        └── ExportModal.tsx
+```
 
-## 🛠️ Getting Started
+## 🚀 Getting Started
+
+Follow these steps to run Raag Studio locally.
 
 ### Prerequisites
-- **Node.js**: `v20.0.0` or higher (Node 22 LTS recommended)
-- **npm**: `v10.0.0` or higher
-- **Google Gemini API Key**: Obtainable for free at [Google AI Studio](https://aistudio.google.com/).
 
-### Installation
+Make sure you have the following installed:
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/raag-studio.git
-   cd raag-studio
-Install dependencies:
-code
-Bash
-npm install
-Configure Environment Variables:
-Copy .env.example to .env:
-code
-Bash
-cp .env.example .env
-Open .env and add your Gemini API key:
-code
-Env
-GEMINI_API_KEY="your-gemini-api-key-here"
-APP_URL="http://localhost:3000"
-PORT=3000
-Launch the Development Server:
-code
-Bash
-npm run dev
-Open your browser and navigate to http://localhost:3000.
-🧪 Testing & Code Quality
-The project includes a comprehensive suite of 62 unit tests verifying core math, music theory algorithms, DSP curves, and phonetic analysis.
-Run all tests:
-code
-Bash
-npm run test
-Run TypeScript verification:
-code
-Bash
-npm run lint
-Build for production:
-code
-Bash
-npm run build
-📡 Backend API Reference
-All AI endpoints are proxied securely through server.ts to protect your API keys.
-Endpoint	Method	Description
-/api/generate-song-idea	POST	Generates a complete song structure (genre, tempo, key, raga, chord progression, and full lyrics) from a natural language prompt.
-/api/generate-lyrics	POST	Crafts multi-verse lyrics adhering to specific rhyme schemes (e.g., Ghazal, Pop AABB) and emotions.
-/api/suggest-rhymes	POST	Returns a list of categorized rhyming words and poetic metaphors for a given word and language context.
-/api/suggest-lyrics-line	POST	Suggests the immediate next rhyming line based on prior lines, meter balance, and current emotion.
-/api/analyze-storyline	POST	Evaluates the emotional arc and narrative coherence of the lyrics across song sections.
-🎹 Supported Scales & Ragas
-Category	Available Modes
-Western Scales	Major (Ionian), Natural Minor (Aeolian), Harmonic Minor, Melodic Minor, Dorian, Phrygian, Lydian, Mixolydian, Locrian, Blues Minor, Major Pentatonic, Minor Pentatonic
-Indian Raga Scales (Thaats)	Bilawal (Major), Kalyan (Lydian), Khamaj (Mixolydian), Kafi (Dorian), Asavari (Natural Minor), Bhairav (Double Harmonic), Bhairavi (Phrygian), Todi, Marwa, Poorvi
-🤝 Contributing
-Contributions are welcome! Please feel free to open an issue or submit a pull request.
-Fork the Project
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-Ensure all tests pass (npm run test && npm run lint)
-Push to the Branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-📄 License
-Distributed under the Apache License 2.0. See LICENSE for more information.
-<p align="center">
-Crafted with ❤️ for musicians, producers, and songwriters worldwide.
-</p>
+- **Node.js:** Version 20 or higher. Node.js 22 LTS is recommended.
+- **npm:** Version 10 or higher.
+- **Google Gemini API key:** Obtain one from [Google AI Studio](https://aistudio.google.com/).
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/raag-studio.git
+cd raag-studio
 ```
+
+Replace `your-username` with the actual GitHub username or organization hosting the repository.
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create a local environment file from the example:
+
+```bash
+cp .env.example .env
+```
+
+On Windows Command Prompt, use:
+
+```cmd
+copy .env.example .env
+```
+
+Open `.env` and configure the following variables according to your server configuration:
+
+```env
+GEMINI_API_KEY=your-gemini-api-key-here
+APP_URL=http://localhost:3000
+PORT=3000
+```
+
+Replace the placeholder with your actual Gemini API key.
+
+**Security note:** Keep your API key in the server-side environment. Never commit `.env` to Git or expose the key in frontend code.
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Open your browser and navigate to:
+
+[http://localhost:3000](http://localhost:3000)
+
+If your Vite or Express configuration uses a different port, use the URL shown in your terminal.
+
+## 🧪 Testing & Code Quality
+
+Raag Studio includes unit tests for its core audio calculations, music theory, rhyme detection, syllable analysis, and storyline analysis.
+
+Run the test suite:
+
+```bash
+npm run test
+```
+
+Run the project's configured lint or TypeScript verification command:
+
+```bash
+npm run lint
+```
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+The original project documentation reports 62 unit tests. Run the test suite locally to verify the current results.
+
+## 📡 Backend API Reference
+
+The Express backend exposes endpoints for AI-assisted songwriting and lyric analysis.
+
+All endpoints use the `POST` method.
+
+| Endpoint | Description |
+|---|---|
+| `/api/generate-song-idea` | Generates a song blueprint containing musical suggestions, structure, and lyrics. |
+| `/api/generate-lyrics` | Generates lyrics based on creative prompts, rhyme schemes, and emotional direction. |
+| `/api/suggest-rhymes` | Suggests rhyming words and poetic expressions. |
+| `/api/suggest-lyrics-line` | Suggests the next lyric line based on context, rhyme, and meter. |
+| `/api/analyze-storyline` | Analyzes emotional progression and narrative coherence across song sections. |
+
+Requests are handled by the Express backend, which integrates with Google Gemini through the Google GenAI SDK.
+
+The exact request and response schemas should be documented alongside the corresponding route implementations.
+
+## 🎹 Supported Musical Scales
+
+### Western Scales
+
+- Major (Ionian)
+- Natural Minor (Aeolian)
+- Harmonic Minor
+- Melodic Minor
+- Dorian
+- Phrygian
+- Lydian
+- Mixolydian
+- Locrian
+- Blues Minor
+- Major Pentatonic
+- Minor Pentatonic
+
+### Indian Raga-Inspired Scales
+
+- Bilawal
+- Kalyan
+- Khamaj
+- Kafi
+- Asavari
+- Bhairav
+- Bhairavi
+- Todi
+- Marwa
+- Poorvi
+
+*Note: These are the scale and raga-inspired options listed in the project documentation. A scale representation alone does not capture every aspect of a traditional raga's grammar, phrasing, and performance practice.*
+
+## 🤝 Contributing
+
+Contributions, suggestions, bug reports, and feature requests are welcome.
+
+To contribute:
+
+1. Fork the repository.
+2. Create a feature branch.
+
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+
+3. Make your changes and add appropriate tests.
+4. Run the project's checks.
+
+   ```bash
+   npm run test
+   npm run lint
+   ```
+
+5. Commit your changes.
+
+   ```bash
+   git commit -m "Add amazing feature"
+   ```
+
+6. Push your branch.
+
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+
+7. Open a pull request describing your changes.
+
+Please ensure your changes follow the existing code style and do not introduce regressions.
+
+## 🗺️ Roadmap
+
+Potential future enhancements include:
+
+- [ ] Real-time vocal recording and processing improvements.
+- [ ] Multilingual lyric generation.
+- [ ] Additional instruments and synthesis models.
+- [ ] Enhanced audio mixing and mastering.
+- [ ] Collaborative music projects.
+- [ ] Improved mobile and tablet experiences.
+- [ ] Additional audio export formats.
+- [ ] Expanded music theory and raga analysis.
+
+This roadmap represents potential development directions, not a guarantee that these features are already implemented or scheduled.
+
+## 🔐 Security & Responsible Use
+
+- Keep API keys and other secrets out of source control.
+- Validate and handle API requests securely.
+- Respect copyright, licensing, and intellectual property rights.
+- Obtain appropriate permission before using another person's voice or likeness.
+- Review the applicable terms before distributing or commercially using AI-generated audio.
+- Do not assume every generated song is automatically cleared for commercial use.
+
+## 📄 License
+
+This project is distributed under the **Apache License 2.0**.
+
+See the [`LICENSE`](LICENSE) file for the complete license terms.
+
+If the license file is missing from the repository, add the appropriate Apache 2.0 license text before describing the project as officially licensed under it.
+
+---
+
+<p align="center">
+  🎵 <strong>Raag Studio — Turn Your Musical Ideas into Reality.</strong>
+  <br />
+  Built for musicians, producers, songwriters, and creative minds.
+</p>
