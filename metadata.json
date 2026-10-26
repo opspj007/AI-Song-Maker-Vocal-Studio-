@@ -1,0 +1,10 @@
+{
+  "name": "Remix Remix AI Song Maker \u0026 Vocal Studio",
+  "description": "Professional browser-based AI song maker and vocal production studio: prompt-to-song, lyrics writer, melody composition, human-quality AI vocals, audio restoration, auto-tuning, and multitrack mixing.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
